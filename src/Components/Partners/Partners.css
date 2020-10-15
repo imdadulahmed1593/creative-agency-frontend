@@ -1,0 +1,10 @@
+.partners__logo > img {
+  width: 150px;
+  object-fit: contain;
+}
+
+.partners__logos {
+  margin-top: 120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

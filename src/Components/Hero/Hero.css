@@ -1,0 +1,11 @@
+.hero {
+  margin: 0px;
+  margin-top: 30px;
+}
+.hero__info > h1,
+p {
+  width: 60%;
+}
+.hero__info > h1 {
+  font-size: 3rem;
+}

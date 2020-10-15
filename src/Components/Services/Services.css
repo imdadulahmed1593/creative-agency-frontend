@@ -1,0 +1,29 @@
+.services {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.service {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px 5px lightgray;
+  border-radius: 10px;
+  text-decoration: none !important;
+  color: black;
+}
+
+.service > p {
+  width: 90%;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.service__icon {
+  object-fit: contain;
+  width: 100px;
+  margin-top: 30px;
+}

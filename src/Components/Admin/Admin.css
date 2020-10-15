@@ -1,0 +1,98 @@
+.admin {
+  display: flex;
+  height: 100vh;
+}
+
+.admin__left {
+  flex: 0.2;
+  padding-left: 20px;
+}
+
+.admin__left > img {
+  width: 90%;
+  object-fit: contain;
+  margin: 20px auto 20px;
+}
+
+.admin__left > p {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+  cursor: pointer;
+}
+
+.admin__left > p:hover {
+  color: #007bff;
+}
+.admin__left > p > svg {
+  margin-right: 10px;
+}
+.admin__right {
+  flex: 0.8;
+}
+
+.admin__rightHeader > h1 {
+  margin: 20px 0px 20px 10px;
+}
+.admin__rightHeader > p {
+  margin: 0px;
+  font-weight: 700;
+}
+
+.admin__rightHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin__right > table {
+  width: 100%;
+  margin: auto;
+}
+.admin__right > table > tr {
+  display: flex;
+
+  justify-content: space-around;
+}
+.admin__right > table > tr > td,
+th {
+  width: 20%;
+  padding: 10px;
+}
+
+.addService__form {
+  width: 95%;
+  margin: 20px 10px;
+}
+
+.addService__form > input {
+  width: 60%;
+  padding: 10px 0px;
+  padding-left: 10px;
+  outline-width: 0px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-bottom: 15px;
+}
+.addService__form > button {
+  margin-top: 20px;
+}
+
+.makeAdmin__formInput {
+  display: flex;
+  align-items: center;
+}
+.makeAdmin__form {
+  width: 95%;
+  margin: 20px 10px;
+}
+
+.makeAdmin__formInput > input {
+  width: 60%;
+  padding: 10px 0px;
+  padding-left: 10px;
+  outline-width: 0px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-right: 10px;
+}

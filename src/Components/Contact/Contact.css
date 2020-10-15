@@ -1,0 +1,20 @@
+.contact {
+  margin-top: 50px;
+  padding: 70px 0px;
+}
+.contact__form {
+  width: 300px;
+}
+.contact__form > form > input,
+textarea {
+  width: 60%;
+  padding: 10px 0px;
+  padding-left: 10px;
+  outline-width: 0px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-bottom: 15px;
+}
+.contact__form > form > button {
+  margin-top: 20px;
+}
