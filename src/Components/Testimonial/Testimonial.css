@@ -35,3 +35,17 @@
   flex-direction: column;
   align-items: flex-start;
 }
+@media (max-width: 800px) {
+  .testimonials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    margin: auto !important;
+  }
+  .testimonial {
+    width: 80%;
+  }
+}

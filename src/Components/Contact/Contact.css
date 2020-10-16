@@ -18,3 +18,11 @@ textarea {
 .contact__form > form > button {
   margin-top: 20px;
 }
+@media (max-width: 800px) {
+  .contact__form {
+    margin-top: 50px;
+  }
+  .contact {
+    padding: 70px 20px;
+  }
+}

@@ -99,3 +99,26 @@ textarea {
 .service__list > h1 {
   margin: 20px 0px 20px 10px;
 }
+@media (max-width: 500px) {
+  .order {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .order__left {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+  }
+  .order__left > a > img {
+    float: 1px;
+  }
+  .order__left > p {
+    box-shadow: 0 0 10px lightgray;
+    margin-right: 5px;
+    padding: 0px 10px;
+  }
+  .order__right {
+    margin-left: 20px;
+  }
+}

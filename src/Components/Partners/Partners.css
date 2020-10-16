@@ -1,10 +1,22 @@
 .partners__logo > img {
   width: 150px;
   object-fit: contain;
+  margin-top: 30px;
 }
 
 .partners__logos {
   margin-top: 120px !important;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+@media (max-width: 800px) {
+  /* .partners__logos {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-around;
+    margin: auto !important;
+  } */
+  .partners__logo > img {
+    margin: 15px 37%;
+  }
 }
