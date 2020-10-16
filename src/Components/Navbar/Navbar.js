@@ -31,17 +31,17 @@ function Navbar() {
             </a>
           </li>
           <li class="nav-item">
-            <a class=" mr-5 nav-link" href="#">
+            <a class=" mr-5 nav-link" href="#portfolio">
               Our Portfolio
             </a>
           </li>
           <li class="nav-item">
-            <a class="mr-5 nav-link" href="#">
+            <a class="mr-5 nav-link" href="#trainers">
               Our Trainers
             </a>
           </li>
           <li class="nav-item">
-            <a class="mr-5 nav-link" href="#">
+            <a class="mr-5 nav-link" href="#contact">
               Contact Us
             </a>
           </li>

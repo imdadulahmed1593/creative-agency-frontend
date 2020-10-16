@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import instance from "../axios";
 import { useStateValue } from "../StateProvider";
 import "./Order.css";
@@ -29,9 +29,10 @@ function Order() {
       type: orders[orders.length - 1]?.type,
       description: orders[orders.length - 1]?.description,
       icon: orders[orders.length - 1]?.icon,
+      status: "Pending",
     });
 
-    history.push("/order");
+    history.push("/");
   };
 
   const handleReview = async (e) => {
@@ -58,7 +59,9 @@ function Order() {
   return (
     <div className="order">
       <div className="order__left">
-        <img src={require("../../images/logos/logo.png")} alt="" />
+        <Link to="/">
+          <img src={require("../../images/logos/logo.png")} alt="" />
+        </Link>
         <p onClick={() => setToggleValue(0)}>
           <svg
             width="1.5em"
@@ -182,7 +185,21 @@ function Order() {
                     src={require(`../../images/icons/${order.icon}`)}
                     alt=""
                   />
-                  <button className="btn btn-outline-warning">Pending</button>
+                  <button
+                    className={
+                      order.status === "Pending"
+                        ? "btn btn-outline-danger"
+                        : order.status === "Done"
+                        ? "btn btn-outline-success"
+                        : "btn btn-outline-warning"
+                    }
+                  >
+                    {order.status === "Pending"
+                      ? "Pending"
+                      : order.status === "Done"
+                      ? "Done"
+                      : "Ongoing"}
+                  </button>
                 </div>
                 <h3>{order.type}</h3>
                 <p>{order.description}</p>

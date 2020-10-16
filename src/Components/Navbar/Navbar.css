@@ -1,4 +1,5 @@
 .navbar__logo {
-  height: 50px;
+  height: 60px;
   object-fit: contain;
+  margin-left: 20px;
 }

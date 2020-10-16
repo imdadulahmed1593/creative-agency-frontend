@@ -2,7 +2,7 @@ import React from "react";
 import "./Contact.css";
 function Contact() {
   return (
-    <div style={{ background: "#FBD062" }} className="row contact">
+    <div id="contact" style={{ background: "#FBD062" }} className="row contact">
       <div className="col-md-5 offset-md-1">
         <h1>Let us handle your project, professionally</h1>
         <p>

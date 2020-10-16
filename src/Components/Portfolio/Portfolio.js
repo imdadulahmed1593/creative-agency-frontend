@@ -4,6 +4,7 @@ import { Carousel } from "react-bootstrap";
 function Portfolio() {
   return (
     <div
+      id="portfolio"
       style={{ background: "#111430", color: "#fff" }}
       className="mt-5 mb-5 p-5 portfolio"
     >

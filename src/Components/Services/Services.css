@@ -6,21 +6,29 @@
   flex-wrap: wrap;
   margin: auto !important;
 }
+
 .service {
   width: 30%;
+  margin-left: 3%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px 5px lightgray;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 20px 5px lightgray;
+  /* box-shadow: 0 0 20px 5px lightgray; */
   border-radius: 10px;
   text-decoration: none !important;
   color: black;
-  margin-left: 3%;
+  /* margin-left: 3%;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; */
+  transition: transform 1000ms ease-out;
 }
-
+.service:hover {
+  transform: perspective(800px) rotateX(15deg) rotateY(15deg) scale(1.1);
+}
 .service > p {
   width: 90%;
 }
@@ -33,3 +41,4 @@
   width: 100px;
   margin-top: 30px;
 }
+/* transform: perspective(600px) rotateX(0deg) rotateY(0deg) scale(1); */

@@ -1,9 +1,10 @@
 import { storage } from "../firebase";
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import instance from "../axios";
 import { useStateValue } from "../StateProvider";
 import "./Admin.css";
+
 function Admin() {
   const history = useHistory();
   const [{ user, orders }, dispatch] = useStateValue();
@@ -14,10 +15,11 @@ function Admin() {
     title: "",
     description: "",
   });
+  const [status, setStatus] = useState("");
   const [image, setImage] = useState(null);
   const [imgUrl, setImgUrl] = useState("");
   const [progress, setProgress] = useState(0);
-
+  console.log(status);
   const handleChange = (e) => {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
@@ -74,10 +76,20 @@ function Admin() {
     );
   };
 
+  const handleStatus = async (id, event) => {
+    setStatus(event.target.value);
+    console.log(id, status);
+    await instance
+      .patch(`/update/${id}`, { status: status })
+      .then((res) => console.log(res.data));
+  };
+
   return (
     <div className="admin">
       <div className="admin__left">
-        <img src={require("../../images/logos/logo.png")} alt="" />
+        <Link to="/">
+          <img src={require("../../images/logos/logo.png")} alt="" />
+        </Link>
         <p onClick={() => setToggleValue(0)}>
           <svg
             width="1.5em"
@@ -156,10 +168,14 @@ function Admin() {
                 <td>{order.type}</td>
                 <td>{order.details}</td>
                 <td>
-                  <select name="" id="">
-                    <option value="">Pending</option>
-                    <option value="">Done</option>
-                    <option value="">Ongoing</option>
+                  <select
+                    onChange={(e) => handleStatus(order._id, e)}
+                    name=""
+                    id=""
+                  >
+                    <option value="Pending">Pending</option>
+                    <option value="Done">Done</option>
+                    <option value="Ongoing">Ongoing</option>
                   </select>
                 </td>
               </tr>
@@ -231,3 +247,7 @@ function Admin() {
 }
 
 export default Admin;
+// onChange={(event) => {
+//   setStatus(event.target.value);
+//   handleStatus(order._id);
+// }}

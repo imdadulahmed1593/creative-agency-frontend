@@ -9,7 +9,7 @@ function Testimonial() {
   }, []);
 
   return (
-    <div className=" m-5 p-5">
+    <div id="trainers" className=" m-5 p-5">
       <h1 className="text-center mb-5 pb-5">
         Clients <span style={{ color: "#7AB259" }}>feedback</span>{" "}
       </h1>

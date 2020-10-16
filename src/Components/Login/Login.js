@@ -19,7 +19,7 @@ function Login() {
           type: "SET_USER",
           user: authUser,
         });
-        console.log(authUser.email);
+
         if (authUser.email === "programming.hero.instructor@gmail.com") {
           history.push("/admin");
         } else {
