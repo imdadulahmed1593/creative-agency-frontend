@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://afternoon-scrubland-98114.herokuapp.com/", //the api (cloud function) url
+  baseURL: "http://localhost:8080", //the api (cloud function) url
 });
 
 export default instance;

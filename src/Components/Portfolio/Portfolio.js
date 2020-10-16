@@ -30,13 +30,7 @@ function Portfolio() {
             alt="Third slide"
           />
         </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="carousel-img img-fluid pb-5 d-block w-40"
-            src={require("../../images/carousel-4.png")}
-            alt="Third slide"
-          />
-        </Carousel.Item>
+
         <Carousel.Item>
           <img
             className="carousel-img img-fluid pb-5 d-block w-40"

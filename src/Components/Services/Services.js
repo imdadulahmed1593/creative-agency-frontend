@@ -36,7 +36,11 @@ function Services() {
           >
             <img
               className="service__icon img-fluid"
-              src={require(`../../images/icons/${service.icon}`)}
+              src={
+                service.icon
+                  ? require(`../../images/icons/${service.icon}`)
+                  : `${service.url}`
+              }
               alt=""
             />
             <h2 className="text-center m-3">{service.title}</h2>
@@ -49,3 +53,4 @@ function Services() {
 }
 
 export default Services;
+// https://toppng.com/uploads/preview/web-development-icon-png-clipart-website-development-web-dev-icon-11562967383vhxlfmnerz.png

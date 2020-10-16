@@ -96,3 +96,10 @@ th {
   border: 1px solid lightgray;
   margin-right: 10px;
 }
+.imageupload__progress {
+  width: 60%;
+}
+.service__imgUpload {
+  display: flex;
+  align-items: center;
+}

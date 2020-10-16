@@ -1,3 +1,4 @@
+import { storage } from "../firebase";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import instance from "../axios";
@@ -13,6 +14,15 @@ function Admin() {
     title: "",
     description: "",
   });
+  const [image, setImage] = useState(null);
+  const [imgUrl, setImgUrl] = useState("");
+  const [progress, setProgress] = useState(0);
+
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
 
   useEffect(() => {
     instance.get("/orders").then((res) => setAllOrders(res.data));
@@ -22,12 +32,46 @@ function Admin() {
     e.preventDefault();
 
     await instance.post("/services", {
-      icon: service.icon,
+      url: imgUrl,
       title: service.title,
       description: service.description,
     });
-
+    setProgress(0);
+    setImage(null);
     history.push("/");
+  };
+
+  const handleUpload = (e) => {
+    e.preventDefault();
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // progress function ...
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(progress);
+      },
+      (error) => {
+        // Error function ...
+        console.log(error);
+      },
+      () => {
+        // complete function ...
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then((url) => {
+            setImgUrl(url);
+            console.log(url);
+            console.log(imgUrl);
+
+            // post image inside db
+          });
+      }
+    );
   };
 
   return (
@@ -145,10 +189,21 @@ function Admin() {
             <br />
             <br />
             <h4>Icon</h4>
+            <progress
+              className="imageupload__progress"
+              value={progress}
+              max="100"
+            />
+            <div className="service__imgUpload">
+              <input type="file" onChange={handleChange} />
+              <button
+                onClick={handleUpload}
+                className="btn btn-lg btn-outline-success"
+              >
+                Upload Image
+              </button>
+            </div>
 
-            <button className="btn btn-lg btn-outline-success">
-              Upload Image
-            </button>
             <br />
             <br />
             <button onClick={handleSubmit} className="btn btn-lg btn-success">
