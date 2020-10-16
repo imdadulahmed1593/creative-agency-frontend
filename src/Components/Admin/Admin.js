@@ -1,15 +1,34 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import instance from "../axios";
 import { useStateValue } from "../StateProvider";
 import "./Admin.css";
 function Admin() {
+  const history = useHistory();
   const [{ user, orders }, dispatch] = useStateValue();
   const [toggleValue, setToggleValue] = useState(0);
   const [allOrders, setAllOrders] = useState([]);
+  const [service, setService] = useState({
+    icon: "",
+    title: "",
+    description: "",
+  });
 
   useEffect(() => {
     instance.get("/orders").then((res) => setAllOrders(res.data));
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await instance.post("/services", {
+      icon: service.icon,
+      title: service.title,
+      description: service.description,
+    });
+
+    history.push("/");
+  };
 
   return (
     <div className="admin">
@@ -107,12 +126,22 @@ function Admin() {
             <br />
             <h4>Service Title</h4>
             <br />
-            <input type="text" placeholder="Enter title" />
+            <input
+              onBlur={(e) => setService({ ...service, title: e.target.value })}
+              type="text"
+              placeholder="Enter title"
+            />
             <br />
             <br />
             <h4>Service Description</h4>
             <br />
-            <input type="email" placeholder="Write a detailed description" />
+            <input
+              onBlur={(e) =>
+                setService({ ...service, description: e.target.value })
+              }
+              type="text"
+              placeholder="Write a detailed description"
+            />
             <br />
             <br />
             <h4>Icon</h4>
@@ -122,7 +151,9 @@ function Admin() {
             </button>
             <br />
             <br />
-            <button className="btn btn-lg btn-success">Submit</button>
+            <button onClick={handleSubmit} className="btn btn-lg btn-success">
+              Submit
+            </button>
             <br />
           </form>
         ) : (
