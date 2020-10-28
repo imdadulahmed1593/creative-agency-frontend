@@ -1,6 +1,6 @@
 # Creative Agency
 ![alt text](src/images/creative-agency.jpg)
-[](https://creative-agency-frontend-7fa96.web.app/)
+[Live Site](https://creative-agency-frontend-7fa96.web.app/)
 
 A full-stack agency app where you can take any courses that the agency offers.  User panel shows the courses enrolled and user can review any of the courses which will be displayed in the UI. separate admin panel for admins where they can add courses and checkout user list. 
 
