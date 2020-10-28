@@ -1,1 +1,1 @@
-![alt text](images/creative-agency.jpg)
+![alt text](src/images/creative-agency.jpg)
