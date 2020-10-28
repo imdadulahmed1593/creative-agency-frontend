@@ -1,8 +1,8 @@
 # Creative Agency
 ![alt text](src/images/creative-agency.jpg)
-[Live](https://creative-agency-frontend-7fa96.web.app/)
+[## Live](https://creative-agency-frontend-7fa96.web.app/)
 
-A full-stack restaurant app where you can order your favorite food from the menu. You have options for breakfast, lunch, and dinner. Pay online using your credit card and enjoy the most delicious dummy food.
+A full-stack agency app where you can take any courses that the agency offers.  User panel shows the courses enrolled and user can review any of the courses which will be displayed in the UI. separate admin panel for admins where they can add courses and checkout user list. 
 
 ## Features
 - Selection of any skills that the user wants to learn
