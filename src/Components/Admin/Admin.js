@@ -90,7 +90,7 @@ function Admin() {
         <Link to="/">
           <img src={require("../../images/logos/logo.png")} alt="" />
         </Link>
-        <p onClick={() => setToggleValue(0)}>
+        <p className="admin__leftP1" onClick={() => setToggleValue(0)}>
           <svg
             width="1.5em"
             height="1.5em"
@@ -106,7 +106,7 @@ function Admin() {
           </svg>
           Service List
         </p>
-        <p onClick={() => setToggleValue(1)}>
+        <p className="admin__leftP2" onClick={() => setToggleValue(1)}>
           <svg
             width="1em"
             height="1em"
@@ -122,7 +122,7 @@ function Admin() {
           </svg>
           Add Service
         </p>
-        <p onClick={() => setToggleValue(2)}>
+        <p className="admin__leftP3" onClick={() => setToggleValue(2)}>
           <svg
             width="1em"
             height="1em"

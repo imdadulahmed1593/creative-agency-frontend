@@ -6,6 +6,7 @@ import { auth } from "./Components/firebase";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Order from "./Components/Order/Order";
+import Orders2 from "./Components/orders2/orders2";
 import PrivateRoute from "./Components/PrivateRoute";
 import { useStateValue } from "./Components/StateProvider";
 
@@ -33,6 +34,9 @@ function App() {
         <Switch>
           <Route path="/login">
             <Login></Login>
+          </Route>
+          <Route path="/orders2">
+            <Orders2></Orders2>
           </Route>
           <PrivateRoute path="/order">
             <Order></Order>

@@ -25,4 +25,8 @@ textarea {
   .contact {
     padding: 70px 20px;
   }
+  .contact__form > form > input,
+  textarea {
+    width: 90%;
+  }
 }

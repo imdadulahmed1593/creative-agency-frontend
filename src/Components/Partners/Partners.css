@@ -2,21 +2,28 @@
   width: 150px;
   object-fit: contain;
   margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.partners__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .partners__logos {
   margin-top: 120px !important;
   margin-left: auto !important;
   margin-right: auto !important;
 }
-@media (max-width: 800px) {
-  /* .partners__logos {
+@media (max-width: 1000px) {
+  .partners__logos {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: space-around;
     margin: auto !important;
-  } */
-  .partners__logo > img {
-    margin: 15px 37%;
   }
+  /* .partners__logo > img {
+    margin: 15px 37%;
+  } */
 }

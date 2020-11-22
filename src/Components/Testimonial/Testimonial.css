@@ -35,17 +35,22 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+.trainers {
+  width: 100%;
+}
 @media (max-width: 800px) {
   .testimonials {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
+
     align-items: center;
     /* flex-wrap: wrap; */
     margin: auto !important;
   }
   .testimonial {
-    width: 80%;
+    width: 100%;
+    margin: 10px 0px;
   }
 }
